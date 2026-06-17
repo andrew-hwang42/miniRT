@@ -1,0 +1,43 @@
+#include "../incs/miniRT.h"
+
+int	is_plane(t_data *data, double *t, int pl_i, double distance)
+{
+	t_vec3	rc;
+	double	dot_n_d;
+	double	dot_n_rc;
+
+	rc = vec3_sub_vec3(data->obj[pl_i]->xyz_pos, data->ray->point);
+	dot_n_d = vec3_dot_vec3(data->obj[pl_i]->xyz_vec, data->ray->direc);
+	if (dot_n_d == 0)
+		return (1);
+	dot_n_rc = vec3_dot_vec3(data->obj[pl_i]->xyz_vec, rc);
+	*t = dot_n_rc / dot_n_d;
+	if (*t < EPSILON || distance < *t)
+		return (1);
+	return (0);
+}
+
+int	hit_plane(t_data *data, t_hit *hit, int pl_i, double distance)
+{
+	double	t;
+
+	if (data->obj[pl_i]->obj_type != PLANE)
+		return (1);
+	if (is_plane(data, &t, pl_i, distance))
+		return (1);
+	set_hit_point(data, hit, t);
+	hit->normal_vec = data->obj[pl_i]->xyz_vec;
+	hit->color = data->obj[pl_i]->rgb;
+	return (0);
+}
+
+int	light_hit_pl(t_data *data, int pl_i, double distance)
+{
+	double	t;
+
+	if (data->obj[pl_i]->obj_type != PLANE)
+		return (1);
+	if (is_plane(data, &t, pl_i, distance))
+		return (1);
+	return (0);
+}
