@@ -23,7 +23,7 @@ The manipulation system follows a strict input order:
 Before any transformation can be applied, a mode must be selected.
 
 |    key   |         Mode        |
-|:---------|--------------------:|
+|:---------|:--------------------|
 | KEY_C    | Camera              |
 | KEY_L    | Light               |
 | KEY_1    | Sphere              |
@@ -37,7 +37,7 @@ Before any transformation can be applied, a mode must be selected.
 After selecting a mode, choose the desired operation.
 
 |    key   |      Operation      |
-|:---------|--------------------:|
+|:---------|:--------------------|
 | KEY_M    | Move (Translation)  |
 | KEY_R    | Rotate              |
 
@@ -48,7 +48,7 @@ After selecting a mode, choose the desired operation.
 Choose the axis on which the transformation will be applied.
 
 |    key   |         Axis        |
-|:---------|--------------------:|
+|:---------|:--------------------|
 | KEY_X    | X-axis              |
 | KEY_Y    | Y-axis              |
 | KEY_Z    | Z-axis              |
@@ -60,7 +60,7 @@ Choose the axis on which the transformation will be applied.
 Use the arrow keys to apply the selected transformation.
 
 |    key   |         Axis        |
-|:---------|--------------------:|
+|:---------|:--------------------|
 | KEY_UP   | <ul><li>Move: Positive (+)</li><li>Rotate: Clockwise</li></ul> |
 | KEY_DOWN | <ul><li>Move: Negative (-)</li><li>Rotate: Counterclockwise</li></ul> |
 
@@ -76,7 +76,7 @@ Multiple spheres, planes, and cylinders may exist in a scene.
 To cycle through objects of the same type:
 
 |    key   |         Axis        |
-|:---------|--------------------:|
+|:---------|:--------------------|
 | KEY_F1   | Next sphere         |
 | KEY_F2   | Next plane          |
 | KEY_F3   | Next cylinder       |
