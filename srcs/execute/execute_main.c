@@ -1,5 +1,21 @@
 #include "../incs/miniRT.h"
 
+void	init_data(t_data *data)
+{
+	data->rt = NULL;
+	data->ray = NULL;
+	data->hit = NULL;
+	data->sp = 0;
+	data->pl = 0;
+	data->cy = 0;
+	data->x_normal = vec3(1, 0, 0);
+	data->y_normal = vec3(0, 1, 0);
+	data->z_normal = vec3(0, 0, 1);
+	data->mode = 0;
+	data->move_rotate = 0;
+	data->axis = 0;
+}
+
 void	init_rt(t_scene *scene, t_rt *rt)
 {
 	rt->focal_length = 1;
@@ -19,6 +35,8 @@ void	raytracing_main(t_data *data, int flag)
 {
 	t_rt	rt;
 
+	if (data->obj)
+		free_obj(data->obj);
 	data->obj = init_obj(data->scene);
 	data->rt = &rt;
 	mlx_clear_window(data->mlx->mlx_ptr, data->mlx->win);
@@ -37,14 +55,10 @@ int	execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx)
 
 	data.scene_ori = scene_ori;
 	data.scene = scene;
+	data.obj = NULL;
 	data.mlx = mlx;
 	data.n_obj = scene->n_sphere + scene->n_plane + scene->n_cylinder;
-	data.sp = 0;
-	data.pl = 0;
-	data.cy = 0;
-	data.x_normal = vec3(1, 0, 0);
-	data.y_normal = vec3(0, 1, 0);
-	data.z_normal = vec3(0, 0, 1);
+	init_data(&data);
 	if (mlx_init_window(mlx))
 		return (err_msg("mlx init error"), free_scene(scene),
 			free_scene(scene_ori), exit(1), 1);

@@ -151,6 +151,9 @@ typedef struct s_data
 	t_vec3		x_normal;
 	t_vec3		y_normal;
 	t_vec3		z_normal;
+	int			mode;
+	int			move_rotate;
+	int			axis;
 }	t_data;
 
 #endif

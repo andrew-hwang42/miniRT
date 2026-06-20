@@ -4,6 +4,7 @@
 # include "./miniRT.h"
 
 /* execute_main.c */
+void	init_data(t_data *data);
 void	init_rt(t_scene *scene, t_rt *rt);
 void	raytracing_main(t_data *data, int flag);
 int		execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx);
@@ -96,6 +97,7 @@ int		color_convert_to_int(t_rgb3 rgb);
 int		mlx_init_window(t_mlx *mlx);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 int		mlx_exit(t_data *data);
+void	check_key_object(int key, t_data *data);
 int		mlx_keys(int key, t_data *data);
 
 /* utils.c */

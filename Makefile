@@ -1,7 +1,7 @@
 NAME = miniRT
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 LIBFT_DIR = ./libft
@@ -50,12 +50,17 @@ FILES	= $(SRCS_DIR)main \
 		$(SRCS_EXECUTE_DIR)utils_color \
 		$(SRCS_EXECUTE_DIR)utils_mlx \
 		$(SRCS_EXECUTE_DIR)utils \
+		$(SRCS_EXECUTE_DIR)move_rotate/move_camera \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera \
-		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_set_norm_vec \
-		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_set_scene_ori \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_x_axis_obj \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_y_axis_obj \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_z_axis_obj \
+		$(SRCS_EXECUTE_DIR)move_rotate/move_light \
+		$(SRCS_EXECUTE_DIR)move_rotate/move_sphere \
+		$(SRCS_EXECUTE_DIR)move_rotate/move_plane \
+		$(SRCS_EXECUTE_DIR)move_rotate/rotate_plane \
+		$(SRCS_EXECUTE_DIR)move_rotate/move_cylinder \
+		$(SRCS_EXECUTE_DIR)move_rotate/rotate_cylinder
 
 INCS_DIR	= ./incs
 
