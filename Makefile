@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/06/21 00:38:32 by  beamrane         #+#    #+#              #
+#    Updated: 2026/06/21 00:40:12 by ahwang           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = miniRT
 
 CC = cc
@@ -49,7 +61,9 @@ FILES	= $(SRCS_DIR)main \
 		$(SRCS_EXECUTE_DIR)utils_vec2 \
 		$(SRCS_EXECUTE_DIR)utils_color \
 		$(SRCS_EXECUTE_DIR)utils_mlx \
+		$(SRCS_EXECUTE_DIR)utils_check_keys \
 		$(SRCS_EXECUTE_DIR)utils \
+		$(SRCS_EXECUTE_DIR)print_msg \
 		$(SRCS_EXECUTE_DIR)move_rotate/move_camera \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera \
 		$(SRCS_EXECUTE_DIR)move_rotate/rotate_camera_x_axis_obj \

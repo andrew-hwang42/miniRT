@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:03:06 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/21 00:32:48 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef EXECUTE_H
 # define EXECUTE_H
 
@@ -97,11 +109,24 @@ int		color_convert_to_int(t_rgb3 rgb);
 int		mlx_init_window(t_mlx *mlx);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
 int		mlx_exit(t_data *data);
-void	check_key_object(int key, t_data *data);
 int		mlx_keys(int key, t_data *data);
+
+/* utils_mlx_key.c */
+void	key_select_mode_move_rotate_axis(int key, t_data *data);
+void	key_obj_next(int key, t_data *data);
+void	check_move_rotate(int key, t_data *data);
+void	check_key(int key, t_data *data);
 
 /* utils.c */
 void	free_obj(t_obj **obj);
 double	random_double(void);
+void	check_obj_flag(t_data *data, int flag);
+void	print_obj_vec_info(t_data *data, t_scene *scene);
+void	print_obj_info(t_data *data, t_scene *scene, int flag);
+
+/* print_msg.c */
+void	show_example(void);
+void	show_guide(void);
+void	print_obj_info(t_data *data, t_scene *scene, int flag);
 
 #endif

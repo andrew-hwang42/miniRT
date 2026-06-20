@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_main.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:02:50 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/21 00:00:41 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/miniRT.h"
 
 void	init_data(t_data *data)
@@ -44,9 +56,8 @@ void	raytracing_main(t_data *data, int flag)
 	start_raytracing(data);
 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win,
 		data->mlx->img_ptr, 0, 0);
-	(void)flag;
-	//show_guide();
-	//print_scene_info(data, data->scene_ori, flag);
+	show_guide();
+	print_obj_info(data, data->scene_ori, flag);
 }
 
 int	execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx)

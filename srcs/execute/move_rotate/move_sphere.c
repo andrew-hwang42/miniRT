@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_sphere.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:01:20 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/20 23:57:11 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/miniRT.h"
 
 void	move_sphere_x_axis(int key, t_data *data, int i)
@@ -74,21 +86,10 @@ void	move_sphere_z_axis(int key, t_data *data, int i)
 
 void	move_sphere(int key, t_data *data, int i)
 {
-	int	flag;
-
 	if (data->axis == AXIS_X)
 		move_sphere_x_axis(key, data, i);
 	if (data->axis == AXIS_Y)
 		move_sphere_y_axis(key, data, i);
 	if (data->axis == AXIS_Z)
 		move_sphere_z_axis(key, data, i);
-	if (key == KEY_F1)
-	{
-		if (data->sp == data->scene->n_sphere - 1)
-			data->sp = 0;
-		else
-			data->sp++;
-		flag = SP_NEXT;
-		raytracing_main(data, flag);
-	}
 }

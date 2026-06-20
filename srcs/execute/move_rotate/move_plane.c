@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_plane.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:01:22 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/20 23:57:02 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/miniRT.h"
 
 void	move_plane_x_axis(int key, t_data *data, int i)
@@ -74,21 +86,10 @@ void	move_plane_z_axis(int key, t_data *data, int i)
 
 void	move_plane(int key, t_data *data, int i)
 {
-	int	flag;
-
 	if (data->axis == AXIS_X)
 		move_plane_x_axis(key, data, i);
 	if (data->axis == AXIS_Y)
 		move_plane_y_axis(key, data, i);
 	if (data->axis == AXIS_Z)
 		move_plane_z_axis(key, data, i);
-	if (key == KEY_F2)
-	{
-		if (data->pl == data->scene->n_plane - 1)
-			data->pl = 0;
-		else
-			data->pl++;
-		flag = PL_NEXT;
-		raytracing_main(data, flag);
-	}
 }

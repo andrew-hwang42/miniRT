@@ -1,5 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   define.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:03:08 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/21 00:33:32 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef DEFINE_H
 # define DEFINE_H
+
+/* color */
+# define YELLOW				"\x1b[33m"
+# define BLACK				"\x1b[0m"
+# define RED				"\x1b[31m"
+# define CYAN				"\x1b[36m"
+# define BLUE				"\x1b[34m"
 
 /* parse */
 # define ERR_ATOI			-9999

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   start_raytracing.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:02:28 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/20 22:58:16 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/miniRT.h"
 
 int	hit_obj(t_data *data, t_hit *hit)
@@ -52,12 +64,9 @@ void	start_raytracing(t_data *data)
 	t_rgb3	color;
 
 	j = (WIN_W / ASPECT_RATIO_W * ASPECT_RATIO_H);
-	printf("Rendering...");
+	printf("%sRendering...\n%s", YELLOW, BLACK);
 	while (0 <= --j)
 	{
-		printf("Rendering... %d %%\n",
-			((WIN_W / ASPECT_RATIO_W * ASPECT_RATIO_H) - j) * 100
-			/ (WIN_W / ASPECT_RATIO_W * ASPECT_RATIO_H));
 		i = -1;
 		while (++i <= WIN_W - 1)
 		{
@@ -70,5 +79,4 @@ void	start_raytracing(t_data *data)
 			my_mlx_pixel_put(data->mlx, i, j, color_convert_to_int(color));
 		}
 	}
-	printf("Done\n");
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_cylinder.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/20 22:01:28 by ahwang            #+#    #+#             */
+/*   Updated: 2026/06/20 23:57:37 by ahwang           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../incs/miniRT.h"
 
 void	move_cylinder_x_axis(int key, t_data *data, int i)
@@ -74,21 +86,10 @@ void	move_cylinder_z_axis(int key, t_data *data, int i)
 
 void	move_cylinder(int key, t_data *data, int i)
 {
-	int	flag;
-
 	if (data->axis == AXIS_X)
 		move_cylinder_x_axis(key, data, i);
 	if (data->axis == AXIS_Y)
 		move_cylinder_y_axis(key, data, i);
 	if (data->axis == AXIS_Z)
 		move_cylinder_z_axis(key, data, i);
-	if (key == KEY_F3)
-	{
-		if (data->cy == data->scene->n_cylinder - 1)
-			data->cy = 0;
-		else
-			data->cy++;
-		flag = CY_NEXT;
-		raytracing_main(data, flag);
-	}
 }
