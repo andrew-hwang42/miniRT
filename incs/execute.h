@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:03:06 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 20:50:16 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/21 21:03:10 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int		color_convert_to_int(t_rgb3 rgb);
 /* utils_mlx.c */
 int		mlx_init_window(t_mlx *mlx);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
-int		mlx_exit(void *param);
+int		mlx_exit();
 int		mlx_keys(int key, void *param);
 
 /* utils_mlx_key.c */
