@@ -6,7 +6,7 @@
 #    By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 00:38:32 by beamrane          #+#    #+#              #
-#    Updated: 2026/06/21 19:59:39 by ahwang           ###   ########.fr        #
+#    Updated: 2026/06/21 20:42:40 by ahwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ $(NAME): $(MLX) $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $^ -o $@ -I$(INCS_DIR) -L$(MLX_DIR) -lmlx $(MLX_FLAGS)
 
 $(MLX):
-	chmod 775 $(MLX_DIR)/configure
+	chmod 775 $(MLX_DIR)/Makefile
 	make -C $(MLX_DIR)
 
 clean:
@@ -102,7 +102,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	make fclean -C $(LIBFT_DIR)
+# 	make fclean -C $(LIBFT_DIR)
 	$(RM) $(NAME)
 
 re: fclean all

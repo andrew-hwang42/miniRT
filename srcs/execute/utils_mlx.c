@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:02:24 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 00:27:39 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/21 20:50:51 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,11 @@ void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-int	mlx_exit(t_data *data)
+int	mlx_exit(void *param)
 {
+	t_data	*data;
+
+	data = (t_data *)param;
 	if (data->mlx->img_ptr)
 		mlx_destroy_image(data->mlx->mlx_ptr, data->mlx->img_ptr);
 	mlx_clear_window(data->mlx->mlx_ptr, data->mlx->win);
@@ -58,8 +61,11 @@ int	mlx_exit(t_data *data)
 	exit (0);
 }
 
-int	mlx_keys(int key, t_data *data)
+int	mlx_keys(int key, void *param)
 {
+	t_data	*data;
+
+	data = (t_data *)param;
 	if (key == KEY_ESC)
 		mlx_exit(data);
 	check_key(key, data);
