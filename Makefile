@@ -6,7 +6,7 @@
 #    By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/21 00:38:32 by beamrane          #+#    #+#              #
-#    Updated: 2026/06/21 20:42:40 by ahwang           ###   ########.fr        #
+#    Updated: 2026/06/21 20:51:58 by ahwang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-# 	make fclean -C $(LIBFT_DIR)
+	make fclean -C $(LIBFT_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
