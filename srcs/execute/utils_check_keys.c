@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 00:09:42 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 00:27:29 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 00:51:45 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,7 @@ void	check_move_rotate(int key, t_data *data)
 
 void	check_key(int key, t_data *data)
 {
-	if (key == KEY_C || key == KEY_L
-		|| key == KEY_1 || key == KEY_2 || key == KEY_3)
-		key_select_mode_move_rotate_axis(key, data);
+	key_select_mode_move_rotate_axis(key, data);
 	if (key == KEY_F1 || key == KEY_F2 || key == KEY_F3)
 		key_obj_next(key, data);
 	if (key == KEY_Q)

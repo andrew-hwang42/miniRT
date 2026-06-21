@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:02:24 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 20:50:51 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 00:50:27 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,15 @@ int	mlx_keys(int key, void *param)
 	if (key == KEY_ESC)
 		mlx_exit(data);
 	check_key(key, data);
+	return (0);
+}
+
+int	mlx_close(void)
+{
+	t_data	*data;
+
+	data = get_data(NULL);
+	if (data)
+		mlx_exit(data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:02:50 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 21:02:40 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 00:42:17 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,15 @@ void	raytracing_main(t_data *data, int flag)
 	print_obj_info(data, data->scene_ori, flag);
 }
 
+t_data	*get_data(t_data *new_data)
+{
+	static t_data	*data;
+
+	if (new_data)
+		data = new_data;
+	return (data);
+}
+
 int	execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx)
 {
 	t_data	data;
@@ -76,8 +85,9 @@ int	execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx)
 	if (data.scene_ori->camera->xyz_vec.z != -1)
 		set_camera(&data);
 	raytracing_main(&data, 0);
+	get_data(&data);
 	mlx_key_hook(mlx->win, mlx_keys, &data);
-	mlx_hook(mlx->win, 17, 0, mlx_exit, &data);
+	mlx_hook(mlx->win, 17, 0, mlx_close, &data);
 	mlx_loop(mlx->mlx_ptr);
 	return (0);
 }

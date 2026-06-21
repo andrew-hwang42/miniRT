@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:03:06 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 21:03:10 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 00:42:34 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 void	init_data(t_data *data);
 void	init_rt(t_scene *scene, t_rt *rt);
 void	raytracing_main(t_data *data, int flag);
+t_data	*get_data(t_data *new_data);
 int		execute_main(t_scene *scene, t_scene *scene_ori, t_mlx *mlx);
 
 /* set_camera_1.c */
@@ -108,8 +109,9 @@ int		color_convert_to_int(t_rgb3 rgb);
 /* utils_mlx.c */
 int		mlx_init_window(t_mlx *mlx);
 void	my_mlx_pixel_put(t_mlx *mlx, int x, int y, int color);
-int		mlx_exit();
+int		mlx_exit(void *param);
 int		mlx_keys(int key, void *param);
+int		mlx_close(void);
 
 /* utils_mlx_key.c */
 void	key_select_mode_move_rotate_axis(int key, t_data *data);
