@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:03:05 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 19:59:39 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 05:34:21 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@
 
 /* main.c */
 void	err_msg(char *str);
-int		minirt_start(char **argv);
 int		main(int argc, char **argv);
 
 /* init_scene_1.c */
@@ -75,7 +74,6 @@ int		parse_c(t_scene *scene, char **line);
 int		parse_l_token(t_scene *scene, char ***s);
 int		parse_l_xyz_pos(t_scene *scene, char ***s);
 int		parse_l_brightness(t_scene *scene, char ***s);
-int		parse_l_rgb(t_scene *scene, char ***s);
 int		parse_l(t_scene *scene, char **line);
 
 /* parse_obj_sp.c */

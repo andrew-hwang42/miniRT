@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_l.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beamrane <beamrane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 00:39:09 by beamrane          #+#    #+#             */
-/*   Updated: 2026/06/21 20:18:38 by beamrane         ###   ########.fr       */
+/*   Updated: 2026/06/22 07:05:48 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ int	parse_l_token(t_scene *scene, char ***s)
 	if (ft_strlen(s[0][0]) != 1)
 		return (scene->light->err = ERR_IDENTIFIER,
 			ft_free_3d(s), 1);
-	if (token_count(s[0], 4))
+	if (token_count(s[0], 3))
+	{
 		return (scene->light->err = ERR_LINE_TOKEN,
 			ft_free_3d(s), 1);
+		printf("here\n");
+	}
 	return (0);
 }
 
@@ -56,37 +59,13 @@ int	parse_l_brightness(t_scene *scene, char ***s)
 	return (0);
 }
 
-int	parse_l_rgb(t_scene *scene, char ***s)
-{
-	if (!s[2])
-		return (scene->light->err = ERR_MALLOC,
-			ft_free_3d(s), 1);
-	if (token_count(s[2], 3) || check_comma(s[0][3]))
-		return (scene->light->err = ERR_RGB_TOKEN,
-			ft_free_3d(s), 1);
-	if (ft_atoi(s[2][0]) == ERR_ATOI
-		|| ft_atoi(s[2][1]) == ERR_ATOI
-		|| ft_atoi(s[2][2]) == ERR_ATOI)
-		return (scene->light->err = ERR_RGB_VALUE,
-			ft_free_3d(s), 1);
-	if (!(0 <= ft_atoi(s[2][0]) && ft_atoi(s[2][0]) <= 255)
-		|| !(0 <= ft_atoi(s[2][1]) && ft_atoi(s[2][1]) <= 255)
-		|| !(0 <= ft_atoi(s[2][2]) && ft_atoi(s[2][2]) <= 255))
-		return (scene->light->err = ERR_RGB_VALUE,
-			ft_free_3d(s), 1);
-	scene->light->rgb.r = ft_atoi(s[2][0]);
-	scene->light->rgb.g = ft_atoi(s[2][1]);
-	scene->light->rgb.b = ft_atoi(s[2][2]);
-	return (0);
-}
-
 int	parse_l(t_scene *scene, char **line)
 {
 	char	***s;
 
 	if (scene->light->check)
 		return (err_msg("Map error: L: already exists"), 1);
-	s = (char ***)ft_calloc(sizeof(char **), 4);
+	s = (char ***)ft_calloc(sizeof(char **), 3);
 	if (!s)
 		return (err_msg("Malloc error"), 1);
 	s[0] = ft_split(*line, ' ');
@@ -96,11 +75,12 @@ int	parse_l(t_scene *scene, char **line)
 		return (scene->light->err = ERR_LINE_TOKEN,
 			ft_free_3d(s), 1);
 	s[1] = ft_split(s[0][1], ',');
-	s[2] = ft_split(s[0][3], ',');
-	if (parse_l_xyz_pos(scene, s) || parse_l_brightness(scene, s)
-		|| parse_l_rgb(scene, s))
+	if (parse_l_xyz_pos(scene, s) || parse_l_brightness(scene, s))
 		return (err_check_l(scene), 1);
 	ft_free_3d(s);
+	scene->light->rgb.r = 255;
+	scene->light->rgb.g = 255;
+	scene->light->rgb.b = 255;
 	scene->light->check++;
 	return (0);
 }

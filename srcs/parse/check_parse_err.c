@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_parse_err.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beamrane <beamrane@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/21 00:39:18 by beamrane          #+#    #+#             */
-/*   Updated: 2026/06/21 20:18:22 by beamrane         ###   ########.fr       */
+/*   Updated: 2026/06/22 05:40:57 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,6 @@ void	err_check_l(t_scene *scene)
 			err_msg("Map error: L: xyz position value error");
 		else if (scene->light->err == ERR_BRIGHTNESS_VALUE)
 			err_msg("Map error: L: brightness value error");
-		else if (scene->light->err == ERR_RGB_TOKEN)
-			err_msg("Map error: L: rbg token error");
-		else if (scene->light->err == ERR_RGB_VALUE)
-			err_msg("Map error: L: rgb value error");
 	}
 }
 

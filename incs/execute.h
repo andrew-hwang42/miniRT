@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:03:06 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/22 00:42:34 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/22 07:07:42 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int		mlx_exit(void *param);
 int		mlx_keys(int key, void *param);
 int		mlx_close(void);
 
-/* utils_mlx_key.c */
+/* utils_check_mlx_key.c */
 void	key_select_mode_move_rotate_axis(int key, t_data *data);
 void	key_obj_next(int key, t_data *data);
 void	check_move_rotate(int key, t_data *data);
