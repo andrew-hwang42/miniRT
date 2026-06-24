@@ -6,7 +6,7 @@
 /*   By: ahwang <ahwang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/20 22:05:23 by ahwang            #+#    #+#             */
-/*   Updated: 2026/06/21 01:25:13 by ahwang           ###   ########.fr       */
+/*   Updated: 2026/06/24 12:07:21 by ahwang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,18 +86,21 @@ void	check_obj_flag(t_data *data, int flag)
 
 void	print_obj_vec_info(t_data *data, t_scene *scene)
 {
-	printf("║     ║ x ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t  ║\n",
+	printf("║     ║ x ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t",
 		scene->camera->xyz_vec.x,
 		scene->plane[data->pl]->xyz_vec.x,
 		scene->cylinder[data->cy]->xyz_vec.x);
-	printf("║ vec ║ y ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t  ║\n",
+	printf("  ║\n");
+	printf("║ vec ║ y ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t",
 		scene->camera->xyz_vec.y,
 		scene->plane[data->pl]->xyz_vec.y,
 		scene->cylinder[data->cy]->xyz_vec.y);
-	printf("║     ║ z ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t  ║\n",
+	printf("  ║\n");
+	printf("║     ║ z ║ %f\t  ║       -       ║       -       ║ %f\t  ║ %f\t",
 		scene->camera->xyz_vec.z,
 		scene->plane[data->pl]->xyz_vec.z,
 		scene->cylinder[data->cy]->xyz_vec.z);
+	printf("  ║\n");
 	printf("╚═════╩═══╩═══════════════╩═══════════════");
 	printf("╩═══════════════╩═══════════════╩═══════════════╝\n");
 }
